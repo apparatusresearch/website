@@ -65,13 +65,13 @@
     <div class="container">
         <h1>Apparatus Research</h1>
         <p>Data Driven Decisions</p>
-        <input type="email" id="emailInput" placeholder="receive more news" onkeydown="handleKeyDown(event)">
+        <input type="email" id="emailInput" placeholder="(receive more news)" onkeydown="handleKeyDown(event)">
     </div>
     <script>
         function handleKeyDown(event) {
             if (event.key === 'Enter') {
                 const email = document.getElementById('emailInput').value;
-                alert(`Email received: ${email}`);
+                alert(`received: ${email}`);
                 // You can add more logic here to handle the email, like sending it to your server
             }
         }
