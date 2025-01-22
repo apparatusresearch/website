@@ -50,15 +50,17 @@
             border: 1px solid #4d0099;
             color: #ffffff;
             padding: 10px 15px;
-            width: 180px;
+            width: 240px;
             font-size: 0.9rem;
             transition: all 0.3s ease;
             border-radius: 4px;
             margin-bottom: 10px;
         }
-       
-        input[type="submit"]:hover {
-            background: #6600cc;
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #6600cc;
+            background: #330066;
+            box-shadow: 0 0 10px rgba(102, 0, 204, 0.3);
         }
         ::placeholder {
             color: #b3a3cc;
@@ -76,14 +78,22 @@
         <h1>Apparatus Research</h1>
         <p>Data Driven Decisions</p>
         <form onsubmit="handleSubmit(event)">
-            <input type="email" id="emailInput" placeholder="Receive More News" required>
-            <input type="submit" value="Submit">
+            <input type="email" id="emailInput" placeholder="(receive more news)" required>
+            <!-- Removed the submit button -->
         </form>
     </div>
     <footer>
         &copy; 2025 Apparatus Research. All rights reserved. | <a href="mailto:contact@apparatusresearch.com" style="color: #b3a3cc; text-decoration: none;">Contact Us</a>
     </footer>
     <script>
+        // Add event listener to the email input for the Enter key press
+        document.getElementById('emailInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                handleSubmit(event);
+            }
+        });
+
+        // Handle form submission
         function handleSubmit(event) {
             event.preventDefault();
             const email = document.getElementById('emailInput').value;
