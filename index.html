@@ -92,7 +92,7 @@
         <h1>Apparatus Research</h1>
         <p>Data Driven Decisions</p>
         <form onsubmit="handleSubmit(event)">
-            <input type="email" id="emailInput" placeholder="(receive more news)" required>
+            <input type="email" id="emailInput" placeholder="receive more news" required>
             <input type="submit" value="Submit">
         </form>
     </div>
@@ -103,7 +103,7 @@
         function handleSubmit(event) {
             event.preventDefault();
             const email = document.getElementById('emailInput').value;
-            alert(`Email received: ${email}`);
+            alert(`thanks!: ${email}`);
             // You can add more logic here to handle the email, like sending it to your server
         }
     </script>
